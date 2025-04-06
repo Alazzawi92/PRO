@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body {
+    min-height: 100vh;
+    background: #f1f1f1;
+  }
+  nav {
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    background: #d9d9d9;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 1000;
+  }
+  #divNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  #titreNav {
+    width: 50%;
+  }
+  #titreNav h1 {
+    font-size: 48px;
+    font-family: "Montserrat Alternates", sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  main{
+    display: flex;
+    justify-content:center ;
+
+  }
+  .container{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
+ #titreDePage{
+  width: 100%;
+  text-align: center;
+
+  margin: 30px;
+ }
+
+  .form_front{
+display: flex;
+align-items: center;
+flex-direction: column;
+margin: 20px;
+border: 2px solid black;
+margin: 10px;
+padding-top: 20px
+
+  }
+  .form_back{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid black;
+    margin: 10px;
+
+
+  }
+  .input,.btn{
+    margin: 5px;
+  }

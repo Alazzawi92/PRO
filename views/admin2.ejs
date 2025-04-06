@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin - Stage Express</title>
+    <link rel="stylesheet" href="/css/9.admin 2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Menu latéral -->
+      <nav class="sidebar">
+        <h2>Stage Express</h2>
+        <h2><%= admin.lastName %></h2>
+        <ul>
+          <li>
+            <a href="/home"><i class="fas fa-home"></i> Accueil</a>
+          </li>
+          <li>
+            <a href="/logoutAdmin"
+              ><i class="fas fa-sign-out-alt"></i> Déconnexion</a
+            >
+          </li>
+          <li></li>
+        </ul>
+      </nav>
+
+      <!-- Contenu principal -->
+      <main class="main-content">
+        <header>
+          <h1>Tableau de Bord de stage express</h1>
+          <a href="/logoutAdmin"
+            ><button class="logout-btn">
+              <i class="fas fa-sign-out-alt"></i> Déconnexion
+            </button></a
+          >
+        </header>
+
+        <section class="stats">
+          <div class="card">
+            <h3>📌 Total Annonces </h3>
+            <p><%= annonces.length + annoncesToValidate.length %></p>
+          </div>
+          <div class="card">
+            <h3>⏳ Annonces en Attente</h3>
+            <p><%= annoncesToValidate.length %></p>
+          </div>
+          <div class="card">
+            <h3> ✅ Annonces Validées</h3>
+            <p><%= annonces.length %></p>
+          </div>
+        </section>
+
+        <section class="annonces">
+          <h2>Gérer les Annonces</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Entreprise</th>
+                <th>Titre</th>
+                <th>Lieu</th>
+                <th>Durée</th>
+                <th>Date de début</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% annoncesToValidate.forEach(annonce => { %>
+              <tr>
+                <td><%= annonce.entreprise.nom %></td>
+                <td><%= annonce.titreDeStage %></td>
+                <td><%= annonce.lieuDuStage %></td>
+                <td><%= annonce.dureeDuStage %></td>
+                <td><%= annonce.dateDeDebut %></td>
+                <td>
+                  <form
+                    action="/approve-annonce/<%= annonce._id %>"
+                    method="POST"
+                    style="display: inline"
+                  >
+                    <button type="submit" class="btn-accept">Accepter</button>
+                  </form>
+                  <form
+                    action="/reject-annonce/<%= annonce._id %>?_method=delete"
+                    method="POST"
+                    style="display: inline"
+                  >
+                    <button type="submit" class="btn-refuse">Refuser</button>
+                  </form>
+                  <form
+                    action="/details-stage-admin/<%= annonce._id %>"
+                    method="get"
+                    style="display: inline"
+                  >
+                    <button type="submit" class="btn-details">Détails</button>
+                  </form>
+                </td>
+              </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

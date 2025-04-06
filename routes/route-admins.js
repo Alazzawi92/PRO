@@ -1,0 +1,10 @@
+const express = require("express")
+const router = express.Router()
+const ControllerAdmin= require("./../controllers/ControllerAdmins")
+const authAdmin=require("./../middlewares/authAdmin")
+router.get("/admins",ControllerAdmin.AdminView)
+router.post("/signup",ControllerAdmin.addAdmin)
+router.post("/login-admin",ControllerAdmin.findOneAdmin)
+router.get("/admin2",authAdmin,ControllerAdmin.AdminView2)
+router.get("/logoutAdmin",ControllerAdmin.logout)
+module.exports=router;

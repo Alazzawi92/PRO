@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/8.admin 1.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="divNav">
+          <div id="titreNav"><h1>Stage Express</h1></div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h2 id="titreDePage">Espace Administrateur</h2>
+        <form class="form" method="post" action="/signup">
+          <div class="form_back">
+            <div class="form_details">S'inscrire d'admin</div>
+            <input 
+            name="firstName"
+            type="text" class="input" placeholder="Nom" />
+            <input
+            name="lastName"
+             type="text" class="input" placeholder="Prenom" />
+            <input
+            name="email"
+             type="text" class="input" placeholder="E-mail" />
+            <input
+            name="password"
+             type="password" class="input" placeholder="Mot de passe" />
+            <input type="password" class="input" placeholder="Confirmez le mot de passe" />
+            <button class="btn">S'inscrire</button>
+            
+          </div>
+        </form>
+        <form action="/login-admin" method="post"> <div class="form_front">
+          <div class="form_details">Se connecter d'admin</div>
+          <input 
+          name="email"
+          type="text" class="input" placeholder="E-mail" />
+          <input
+          name="password"
+           type="password" class="input" placeholder="Mot de passe" />
+          <button class="btn">Se connecter</button>
+        </div></form>
+      </div>
+    </main>
+  </body>
+</html>
